@@ -44,10 +44,10 @@ public class Map01 : IMapData {
 	};
 	
 	RotatingObject[] rotObj = new RotatingObject[]{
-		new RotatingObject("C040", new Vector3(0,7,0), new Vector3(0,0,1)),
-		new RotatingObject("C050", new Vector3(0,7,0), new Vector3(0,0,1)),
-		new RotatingObject("C060", new Vector3(0,7,0), new Vector3(0,0,1)),
-		new RotatingObject("C070", new Vector3(0,7,0), new Vector3(0,0,1)),
+		new RotatingObject("C040", new Vector3(0,7,3), new Vector3(0,0,1)),
+		new RotatingObject("C050", new Vector3(0,7,3), new Vector3(0,0,1)),
+		new RotatingObject("C060", new Vector3(0,7,3), new Vector3(0,0,1)),
+		new RotatingObject("C070", new Vector3(0,7,3), new Vector3(0,0,1)),
 		new RotatingObject("C071", new Vector3(0,7,0), new Vector3(0,0,1)),
 		new RotatingObject("C072", new Vector3(0,7,0), new Vector3(0,0,1)),
 		new RotatingObject("C073", new Vector3(0,7,0), new Vector3(0,0,1)),

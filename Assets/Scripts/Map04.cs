@@ -38,6 +38,9 @@ public class Map04 : IMapData {
 		new Vector3(5,1,3),
 		new Vector3(6,2,3),
 
+        new Vector3(-3,6,4),
+
+        /*
 		new Vector3(7,4,4),
 		new Vector3(7,5,5),
 		new Vector3(7,6,6),
@@ -47,6 +50,7 @@ public class Map04 : IMapData {
 		new Vector3(7,5,6),
 
 		new Vector3(-3,6,4),
+        */
 	};
 	
 	Quaternion[] slopeRot = new Quaternion[]{
@@ -58,6 +62,9 @@ public class Map04 : IMapData {
 		Quaternion.Euler(0,0,180),
 		Quaternion.Euler(0,0,180),
 
+        Quaternion.Euler(0,270,90),
+
+        /*
 		Quaternion.Euler(0,270,0),
 		Quaternion.Euler(0,270,0),
 		Quaternion.Euler(0,270,0),
@@ -67,10 +74,44 @@ public class Map04 : IMapData {
 		Quaternion.Euler(0,270,180),
 
 		Quaternion.Euler(0,270,90),
+        */
 	};
 	
 	RotatingObject[] rotObj = new RotatingObject[]{
-	};
+        new RotatingObject("C309", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C308", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C307", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C306", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C305", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C304", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C303", new Vector3(5,2,5), new Vector3(0,1,0), true),
+
+        new RotatingObject("C733", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C667", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C567", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C467", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C367", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C267", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C167", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C067", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C-167", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C-267", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C-367", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C-366", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C-365", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("C3010", new Vector3(5,2,5), new Vector3(0,1,0), true),
+
+
+        new RotatingObject("S413", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S523", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S633", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S403", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S513", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S623", new Vector3(5,2,5), new Vector3(0,1,0), true),
+        new RotatingObject("S-364", new Vector3(5,2,5), new Vector3(0,1,0), true),
+
+
+    };
 	
 	Vector3 playerStart = new Vector3(3, 0, 3);
 	

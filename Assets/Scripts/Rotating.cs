@@ -24,11 +24,10 @@ public class Rotating : MonoBehaviour {
 	*/
 
 	// Use this for initialization
+    // Change the material color of rotatable part
 	void Start () {
 		GetComponent<Renderer>().material.color = new Color(0.75f, 0.75f, 0.75f);
 	}
-
-
 	
 	// Update is called once per frame
 	void Update () {
@@ -49,6 +48,7 @@ public class Rotating : MonoBehaviour {
 			angle = Time.deltaTime * 128;
 		else
 		{
+            // 修正旋转的位置
 			float dst = Mathf.Floor((m_Angle + 45) / 90) * 90;
 			angle = dst - m_Angle;
 			if (Mathf.Abs(angle) > 1) angle *= 0.125f;
@@ -68,6 +68,10 @@ public class Rotating : MonoBehaviour {
 			m_Angle -= 360;
 		while (m_Angle < 0)
 			m_Angle += 360;
+
+
+        // 判断玩家位置是否重叠
+        
 
 		transform.RotateAround (point, axis, angle);
 

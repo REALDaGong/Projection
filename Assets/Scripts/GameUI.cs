@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour {
 
@@ -34,10 +35,12 @@ public class GameUI : MonoBehaviour {
 			stage.Load (4);
 		}
 
-        /*
 		if(GUI.Button(new Rect(20,160,80,20), "Stage 5")) {
 			stage.Load (5);
 		}
-        */
+
+        if(GUI.Button(new Rect(20,190,80,20), "Stage 6")) {
+            stage.Load (6);
+        }
     }
 }

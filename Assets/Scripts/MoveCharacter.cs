@@ -8,8 +8,8 @@ public class MoveCharacter : MonoBehaviour {
 		slope_up,
 		slope_down,
 		floor,
-		floor_down,	// 아랫부분이 내려가는 경사
-		floor_up,	// 아랫부분이 올라가는 경사
+		floor_down,
+		floor_up,
 		half,
 	};
 
@@ -23,7 +23,7 @@ public class MoveCharacter : MonoBehaviour {
 	};
 
 	float moving = 0;
-	float updown = 0;
+	float updown = 0; // 标识正在上下坡
 	bool half_check = false;
 	Vector3 moveDest = Vector3.zero;
 	GameObject standingFloor = null;
@@ -76,6 +76,7 @@ public class MoveCharacter : MonoBehaviour {
 		return vec;
 	}
 
+    // 世界坐标转换为等距方格坐标
 	Vector3 FloorFunc(Vector3 pos) {
 		Vector3 v = ArrangePos (pos);
 		return new Vector3(v.x + v.y, v.z + v.y, v.y);
@@ -119,7 +120,7 @@ public class MoveCharacter : MonoBehaviour {
 	SlopeType GetSlopeType(GameObject slope, Vector3 move_dir) {
 		Vector3 slope_normal = SlopeNormal (slope);
 		Vector3 player_normal = transform.up;
-		float dot1 = Vector3.Dot (slope_normal, player_normal);
+		float dot1 = Vector3.Dot (slope_normal, player_normal); // dot product
 		float dot2 = Vector3.Dot (slope_normal, move_dir);
 		if (dot1 > 0.125f) {
 			if (dot2 > 0.125f)
@@ -141,15 +142,15 @@ public class MoveCharacter : MonoBehaviour {
 	GameObject FindFloorWithFloorValue(Vector3 floor_pos, bool find_next = false) {
 		GameObject[] floors = GameObject.FindGameObjectsWithTag("Floor");
 
-		GameObject target = null;	// 찾는 위치
+		GameObject target = null;
 		Vector3 target_pos = Vector3.zero;
 
-		GameObject lid = null;		// 찾는 위치 바로 위에 있는 바닥(뚜껑)
+		GameObject lid = null;		// 平面位置
 		Vector3 lid_pos = new Vector3(floor_pos.x + 1, floor_pos.y + 1, floor_pos.z + 1);
 
 		foreach (GameObject obj in floors) {
 			Vector3 pos = FloorFunc (obj.transform.position);
-			if (floor_pos.x == pos.x && floor_pos.y == pos.y
+			if (floor_pos.x == pos.x && floor_pos.y == pos.y // 
 			    && (!find_next || pos.z < floor_pos.z)
 			    && (target == null || pos.z > target_pos.z)) {
 				target = obj;
@@ -259,6 +260,7 @@ public class MoveCharacter : MonoBehaviour {
 //		RecalcPlayerPos ();
 	}
 
+    // 这里的参数z是等距方格坐标
 	void ChangeZ(float z) {
 		float deltaZ = z - PlayerFloorValue ().z;
 		if (deltaZ == 0) return;
@@ -417,13 +419,12 @@ public class MoveCharacter : MonoBehaviour {
 		}
 	}
 
-
 	class AStarItem{
 		GameObject obj;
 		Vector3 floor_value;
 		int weight;
 		int GWeight, HWeight;
-		public Vector3 dir;	// 이 타일로 오는 방향
+		public Vector3 dir; //
 		public AStarItem parent;
 
 		public AStarItem(GameObject obj, Vector3 floor_value, int gweight, int hweight, Vector3 dir) {

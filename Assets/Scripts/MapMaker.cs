@@ -56,7 +56,7 @@ public class MapMaker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		MakeMap (new Map01 ());
+		MakeMap (new Map06 ());
 	}
 
 	void MakeMap(IMapData mapData) {
@@ -111,7 +111,11 @@ public class MapMaker : MonoBehaviour {
 		case 5:
 			MakeMap (new Map05 ());
 			break;
-		}
+        case 6:
+            MakeMap (new Map06 ());
+            break;
+        }
+
 	}
 	
 	// Update is called once per frame
