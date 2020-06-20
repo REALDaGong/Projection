@@ -31,8 +31,7 @@ public class MoveCharacter : MonoBehaviour {
 	MoveData[] moveList = null;
 	int moveListIndex = 0;
 
-
-	public GameObject StandingFloor {
+    public GameObject StandingFloor {
 		get {
 			return standingFloor;
 		}
@@ -53,8 +52,7 @@ public class MoveCharacter : MonoBehaviour {
 			vec.y = -z;
 			vec.z = x;
 		}
-
-		return vec;
+        return vec;
 	}
 
 	Vector3 ArrangeDir(Vector3 vec) {
@@ -355,8 +353,7 @@ public class MoveCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (Input.GetMouseButtonDown (0)) {
+        if (Input.GetMouseButtonDown (0)) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit)) {
@@ -366,8 +363,13 @@ public class MoveCharacter : MonoBehaviour {
 		}
 
 		if (moving > 0) {
-			moving -= Time.deltaTime * 4;
-			transform.Translate ((Vector3.forward + Vector3.up * updown) * Time.deltaTime * 4, Space.Self);
+            // =============Animation Test
+            RobotFreeAnim robotAnim = GameObject.Find("robotSphere").GetComponent<RobotFreeAnim>();
+            robotAnim.GetAnim().SetBool("Walk_Anim", true);
+            // ============================
+
+            moving -= Time.deltaTime * 2.5f;
+			transform.Translate ((Vector3.forward + Vector3.up * updown) * Time.deltaTime * 2.5f, Space.Self);
 			if (moving <= 0) {
 				transform.position = moveDest;
 				standingFloor = destFloor;
@@ -399,6 +401,13 @@ public class MoveCharacter : MonoBehaviour {
 			}
 			return;
 		}
+        // =============Animation Test
+        else
+        {
+            RobotFreeAnim robotAnim = GameObject.Find("robotSphere").GetComponent<RobotFreeAnim>();
+            robotAnim.GetAnim().SetBool("Walk_Anim", false);
+        }
+        // ===========================
 
 		if (moveList != null) return;
 		// ---------
@@ -417,7 +426,20 @@ public class MoveCharacter : MonoBehaviour {
 		else if (Input.GetKey(KeyCode.RightArrow)) {
 			Move(Vector3.right);
 		}
-	}
+        // Roll
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RobotFreeAnim robotAnim = GameObject.Find("robotSphere").GetComponent<RobotFreeAnim>();
+            if (robotAnim.GetAnim().GetBool("Roll_Anim"))
+            {
+                robotAnim.GetAnim().SetBool("Roll_Anim", false);
+            }
+            else
+            {
+                robotAnim.GetAnim().SetBool("Roll_Anim", true);
+            }
+        }
+    }
 
 	class AStarItem{
 		GameObject obj;
@@ -618,7 +640,6 @@ public class MoveCharacter : MonoBehaviour {
 			}
 
 		}
-
 		return items;
 	}
 

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Map01 : IMapData {
-	Vector3[] cubePos = new Vector3[]{
+    Vector3[] cubePos = new Vector3[]{
 		new Vector3(0,0,0),
 		new Vector3(0,0,1),
 		new Vector3(0,0,2),
