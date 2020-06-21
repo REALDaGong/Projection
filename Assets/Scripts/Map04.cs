@@ -114,11 +114,12 @@ public class Map04 : IMapData {
     };
 	
 	Vector3 playerStart = new Vector3(3, 0, 3);
-	
-	public Vector3[] CubePos{ get{ return cubePos; } }
+    Vector3 gameEnd = new Vector3(0, 0, 0);
+
+    public Vector3[] CubePos{ get{ return cubePos; } }
 	public Vector3[] SlopePos{ get{ return slopePos; } }
 	public Quaternion[] SlopeRot{ get{ return slopeRot; } }
 	public RotatingObject[] RotObj{ get{ return rotObj; } }
 	public Vector3 PlayerStart{ get{ return playerStart; } }
-	
+    public Vector3 GameEnd { get { return gameEnd; } }
 }
