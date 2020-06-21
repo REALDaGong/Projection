@@ -21,4 +21,5 @@ public interface IMapData {
 	Quaternion[] SlopeRot{ get; }
 	RotatingObject[] RotObj{ get; }
 	Vector3 PlayerStart{ get; }
+    Vector3 GameEnd { get; }
 }
