@@ -150,6 +150,7 @@ public class MapManager
 
     public void nextLevel()
     {
+        PlayerPrefs.SetInt("Level" + id.ToString(), 1);
         if (id == maxLevel)
         {
             Debug.Log("这已经是最后一关啦！");
@@ -158,7 +159,7 @@ public class MapManager
         else
         {
             string nextscene = "Map0" + ++id;
-            SceneManager.LoadScene(nextscene);
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene(nextscene);
         }
     }
 }

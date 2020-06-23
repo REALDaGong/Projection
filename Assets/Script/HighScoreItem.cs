@@ -15,7 +15,7 @@ namespace MoleMole
             Image image = this.GetComponent<Image>();
             scene_num = index + 1;
             this.GetComponent<Button>().onClick.AddListener(Onclick);
-            if(index == 1)
+            if(PlayerPrefs.GetInt("Level"+scene_num.ToString())==1)
             {
                 image.sprite = Resources.Load("Image/Passed", typeof(Sprite)) as Sprite;
             }
@@ -23,7 +23,7 @@ namespace MoleMole
 
         public void Onclick()
         {
-            SceneManager.LoadScene("Map0" + scene_num.ToString());
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene("Map0"+scene_num.ToString());
         }
-	}
+    }
 }

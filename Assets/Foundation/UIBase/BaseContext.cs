@@ -2,14 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-/*
- *	
- *  Base Context For View
- *
- *	by Xuanyi
- *
- */
-
 namespace MoleMole
 {
 	public class BaseContext 

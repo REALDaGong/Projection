@@ -11,6 +11,6 @@ public class GameUI : MonoBehaviour {
 
     public void onClick()
     {
-        SceneManager.LoadScene("Test");
+        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene("Test");
     }
 }

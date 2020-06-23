@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -54,8 +53,7 @@ namespace MoleMole
 
         public void StartCallBack()
         {
-            Singleton<ContextManager>.Instance.Pop();
-            SceneManager.LoadScene("Map01");
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene("Map01");
         }
 	}
 }
