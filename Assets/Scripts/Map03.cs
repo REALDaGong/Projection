@@ -8,10 +8,10 @@ public class Map03 : IMapData {
 		new Vector3(2,0,5),
 		new Vector3(3,0,5),
 		new Vector3(4,0,5),
-		new Vector3(5,0,5),
+		//new Vector3(5,0,5),
 		new Vector3(6,0,5),
 		new Vector3(7,0,5),
-		new Vector3(8,0,5),
+		//new Vector3(8,0,5),
 		new Vector3(9,0,5),
 		new Vector3(10,0,5),
 		new Vector3(10,0,6),
@@ -27,8 +27,8 @@ public class Map03 : IMapData {
 		new Vector3(1,4,5),
 		new Vector3(1,4,4),
 		new Vector3(1,4,3),
-		new Vector3(1,4,2),
-		new Vector3(1,4,1),
+		new Vector3(2,4,3),
+		new Vector3(3,4,3),
 		new Vector3(1,4,0),
 		new Vector3(1,4,-1),
 		new Vector3(1,4,-2),
@@ -50,12 +50,16 @@ public class Map03 : IMapData {
 	
 	Quaternion[] slopeRot = new Quaternion[]{
 	};
-	
-	RotatingObject[] rotObj = new RotatingObject[]{
-	};
+
+    RotatingObject[] rotObj = new RotatingObject[]{
+
+        new RotatingObject("C143",new Vector3(1,4,3),new Vector3(0,1,0)),
+        new RotatingObject("C243",new Vector3(1,4,3),new Vector3(0,1,0)),
+        new RotatingObject("C343",new Vector3(1,4,3),new Vector3(0,1,0)),
+};
 	
 	Vector3 playerStart = new Vector3(0, 0, 5);
-    Vector3 gameEnd = new Vector3(0, 0, 0);
+    Vector3 gameEnd = new Vector3(10, 1, 5);
 
     public Vector3[] CubePos{ get{ return cubePos; } }
 	public Vector3[] SlopePos{ get{ return slopePos; } }
