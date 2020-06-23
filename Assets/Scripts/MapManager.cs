@@ -91,10 +91,6 @@ public class MapManager
             cube.tag = "Floor";
             cube.name = "C" + pos.x + pos.y + pos.z;    // 'C'ube
             cube.transform.position = pos;
-
-            // set material to cube
-            // Material mat = cube.GetComponent<MeshRenderer>().material;
-            // mat.SetColor("_Color", new Color(1, 0.68f, 0.68f, 1));
         }
         for (int i = 0; i < mapData.SlopePos.Length; i++)
         {
@@ -104,10 +100,6 @@ public class MapManager
             slope.name = "S" + pos.x + pos.y + pos.z;   // 'S'lope
             slope.transform.position = pos;
             slope.transform.rotation = mapData.SlopeRot[i];
-
-            // set material to slope
-            // Material mat = slope.GetComponent<MeshRenderer>().material;
-            // mat.SetColor("_Color", new Color(1, 0.68f, 0.68f, 1));
         }
         foreach (RotatingObject data in mapData.RotObj)
         {
@@ -158,6 +150,7 @@ public class MapManager
 
     public void nextLevel()
     {
+        PlayerPrefs.SetInt("Level" + id.ToString(), 1);
         if (id == maxLevel)
         {
             Debug.Log("这已经是最后一关啦！");
@@ -166,7 +159,7 @@ public class MapManager
         else
         {
             string nextscene = "Map0" + ++id;
-            SceneManager.LoadScene(nextscene);
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene(nextscene);
         }
     }
 }

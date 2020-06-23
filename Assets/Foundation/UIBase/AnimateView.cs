@@ -2,14 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-/*
- *	
- *  Base Animate View
- *
- *	by Xuanyi
- *
- */
-
 namespace MoleMole
 {
 	public abstract class AnimateView : BaseView 
