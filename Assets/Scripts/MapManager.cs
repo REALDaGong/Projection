@@ -76,6 +76,7 @@ public class MapManager
 
     private void MakeMap(IMapData mapData)
     {
+        RotateController.getInstance().clearRotatings();
 
         GameObject[] floor = GameObject.FindGameObjectsWithTag("Floor");
         foreach (GameObject obj in floor)
@@ -109,6 +110,7 @@ public class MapManager
             script.point = data.point;
             script.axis = data.axis;
             script.PlayerRot = data.playerRot;
+            RotateController.getInstance().addRotating(script,data.groupId);
         }
         {
             GameObject player = GameObject.Find("Player");
@@ -118,9 +120,24 @@ public class MapManager
         //关卡终点
         {
             GameObject endpoint = (GameObject)Resources.Load("Prefabs/endpoint");
+            endpoint.tag = "Endpoint";
             endpoint.transform.position = mapData.GameEnd;
             Object.Instantiate(endpoint);
         }
+        //升降
+        {
+            //************************
+            //ImapData的底层数据结构设计比较糟糕，修改会影响到其他地图，因此可升降平台在此写死
+            //************************
+            if (id == 3)
+            {
+                Map03 mapData03 = (Map03)mapData;
+                GameObject movePoint = (GameObject)Resources.Load("Prefabs/movepoint");
+                movePoint.transform.position = mapData03.MovePoint;
+                Object.Instantiate(movePoint);
+            }
+        }
+        RotateController.getInstance().select();
     }
 
     public void Load(int stage_id)
@@ -141,9 +158,6 @@ public class MapManager
                 break;
             case 5:
                 MakeMap(new Map05());
-                break;
-            case 6:
-                MakeMap(new Map06());
                 break;
         }
     }
