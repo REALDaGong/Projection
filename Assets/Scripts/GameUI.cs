@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour {
     public void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(onClick);
+        GameObject.Find("Button").GetComponent<Button>().onClick.AddListener(onClick);
     }
 
     public void onClick()
