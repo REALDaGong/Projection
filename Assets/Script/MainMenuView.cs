@@ -41,9 +41,9 @@ namespace MoleMole
             _animator.SetTrigger("OnEnter");
         }
 
-        public void OptionCallBack()
+        public void HelpCallBack()
         {
-            Singleton<ContextManager>.Instance.Push(new OptionMenuContext());
+            Singleton<ContextManager>.Instance.Push(new HelpMenuContext());
         }
 
         public void HighScoreCallBack()
@@ -55,5 +55,14 @@ namespace MoleMole
         {
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SwitchScene("Map01");
         }
-	}
+
+        public void ExitCallBack()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+        }
+    }
 }

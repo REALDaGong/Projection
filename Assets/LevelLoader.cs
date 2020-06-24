@@ -8,7 +8,6 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    // Update is called once per frame
     public void SwitchScene(string levelName)
     {
         StartCoroutine(LoadLevel(levelName));
