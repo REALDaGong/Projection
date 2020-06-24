@@ -14,22 +14,11 @@ public class Map04 : IMapData
         new Vector3(0,0,6),
         new Vector3(0,0,7),
 
-        new Vector3(0,0,8),
-
-        new Vector3(0,0,9),
-        new Vector3(0,0,10),
-        new Vector3(0,1,10),
-        new Vector3(0,2,10),
-
-        new Vector3(0,3,10),
-        new Vector3(0,4,10),
-        new Vector3(0,5,10),
-        new Vector3(0,6,10),
-
+        new Vector3(1,1,11),
         new Vector3(2,1,11),
         new Vector3(3,1,11),
         new Vector3(4,1,11),
-        new Vector3(5,1,11),
+        //new Vector3(5,1,11),
 
         new Vector3(9,4,11), // 左梯子部分
 
@@ -54,20 +43,6 @@ public class Map04 : IMapData
         new Vector3(9,-6,-1),
 
         // 一些多余砖块
-        new Vector3(0,7,10),
-        new Vector3(1,7,10),
-        new Vector3(2,7,10),
-        new Vector3(3,7,10),
-        new Vector3(4,7,10),
-        new Vector3(0,-1,10),
-        new Vector3(0,-2,10),
-        new Vector3(0,-3,10),
-        new Vector3(0,-4,10),
-        new Vector3(0,-5,10),
-        new Vector3(0,-6,10),
-        new Vector3(0,-7,10),
-        new Vector3(0,-8,10),
-        new Vector3(0,-9,10),
         new Vector3(9,-6,-2),
         new Vector3(9,-6,-3),
         new Vector3(9,-6,-4),
@@ -84,6 +59,11 @@ public class Map04 : IMapData
     };
 
     Vector3[] slopePos = new Vector3[]{
+        new Vector3(1,1,10),
+        new Vector3(1,0,9),
+        new Vector3(1,0,10),
+        new Vector3(1,-1,9),
+
         new Vector3(9,2,8), // 左梯子部分
         new Vector3(9,3,9),
         new Vector3(9,4,10),
@@ -111,6 +91,11 @@ public class Map04 : IMapData
     };
 
     Quaternion[] slopeRot = new Quaternion[]{
+        Quaternion.Euler(0,270,0),
+        Quaternion.Euler(0,270,0),
+        Quaternion.Euler(0,270,180),
+        Quaternion.Euler(0,270,180),
+
         Quaternion.Euler(0,270,0), // 左梯子部分 
         Quaternion.Euler(0,270,0),
         Quaternion.Euler(0,270,0),
@@ -145,48 +130,37 @@ public class Map04 : IMapData
         new RotatingObject("C006", new Vector3(3,1,3), new Vector3(0,1,0), true, 1),
         new RotatingObject("C007", new Vector3(3,1,3), new Vector3(0,1,0), true, 1),
 
-        new RotatingObject("C008", new Vector3(0,0,8), new Vector3(0,0,1), true, 2),
-        new RotatingObject("C009", new Vector3(0,0,8), new Vector3(0,0,1), true, 2),
-
-        new RotatingObject("C0310", new Vector3(0,3,10), new Vector3(0,1,0), true, 3),
-        new RotatingObject("C0410", new Vector3(0,3,10), new Vector3(0,1,0), true, 3),
-        new RotatingObject("C0510", new Vector3(0,3,10), new Vector3(0,1,0), true, 3),
-        new RotatingObject("C0610", new Vector3(0,3,10), new Vector3(0,1,0), true, 3),
-
-        new RotatingObject("C2111", new Vector3(4,1,11), new Vector3(1,0,0), true, 4),
-        new RotatingObject("C3111", new Vector3(4,1,11), new Vector3(1,0,0), true, 4),
-        new RotatingObject("C4111", new Vector3(4,1,11), new Vector3(1,0,0), true, 4),
-
-        new RotatingObject("C1710", new Vector3(1,7,10), new Vector3(1,0,0), true, 5),
-        new RotatingObject("C2710", new Vector3(1,7,10), new Vector3(1,0,0), true, 5),
-        new RotatingObject("C3710", new Vector3(1,7,10), new Vector3(1,0,0), true, 5),
+        new RotatingObject("C1111", new Vector3(3,1,11), new Vector3(0,1,0), true, 2),
+        new RotatingObject("C2111", new Vector3(3,1,11), new Vector3(0,1,0), true, 2),
+        new RotatingObject("C3111", new Vector3(3,1,11), new Vector3(0,1,0), true, 2),
+        new RotatingObject("C4111", new Vector3(3,1,11), new Vector3(0,1,0), true, 2),
 
         // 旋转梯子
-        new RotatingObject("S928", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S939", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S9410", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S918", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S929", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S9310", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("C9411", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S10511", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S11611", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S12711", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S10411", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S11511", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
-        new RotatingObject("S12611", new Vector3(9,4,11), new Vector3(0,0,1), true, 6),
+        new RotatingObject("S928", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S939", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S9410", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S918", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S929", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S9310", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("C9411", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S10511", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S11611", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S12711", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S10411", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S11511", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
+        new RotatingObject("S12611", new Vector3(9,4,11), new Vector3(0,0,1), true, 3),
 
 
-        new RotatingObject("C1017", new Vector3(11,1,7), new Vector3(1,0,0), true, 7),
-        new RotatingObject("C1117", new Vector3(11,1,7), new Vector3(1,0,0), true, 7),
+        new RotatingObject("C1017", new Vector3(11,1,7), new Vector3(1,0,0), true, 4),
+        new RotatingObject("C1117", new Vector3(11,1,7), new Vector3(1,0,0), true, 4),
 
         // 终点部分
-        new RotatingObject("C8-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 8),
-        new RotatingObject("C9-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 8),
-        new RotatingObject("C10-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 8),
+        new RotatingObject("C8-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 5),
+        new RotatingObject("C9-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 5),
+        new RotatingObject("C10-63", new Vector3(9,0,3), new Vector3(0,1,0), true, 5),
 
-        new RotatingObject("C9-61", new Vector3(9,-6,0), new Vector3(0,0,1), true, 9),
-        new RotatingObject("C9-60", new Vector3(9,-6,0), new Vector3(0,0,1), true, 9),
+        new RotatingObject("C9-61", new Vector3(9,-6,0), new Vector3(0,0,1), true, 6),
+        new RotatingObject("C9-60", new Vector3(9,-6,0), new Vector3(0,0,1), true, 6),
     };
 
     Vector3 playerStart = new Vector3(0, 0, 0);
