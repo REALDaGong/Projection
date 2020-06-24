@@ -197,7 +197,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11441056}
-        m_MethodName: OKCallBack
+        m_MethodName: ExitCallBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

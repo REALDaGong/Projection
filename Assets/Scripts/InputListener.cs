@@ -10,11 +10,17 @@ class InputListener : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            RotateController.getInstance().selectNext();
+            if(!(Input.GetKey(KeyCode.Q)|| Input.GetKey(KeyCode.W)))
+            {
+                  RotateController.getInstance().selectNext();
+            }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RotateController.getInstance().selectPre();
+            if (!(Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.W)))
+            {
+                RotateController.getInstance().selectPre();
+            }
         }
     }
 }
